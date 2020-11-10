@@ -1,0 +1,60 @@
+* RC
+  Nome
+  NumeroID 
+  TipoId
+  DDMMAAAA
+  Morada
+  email
+  Num Telefone
+** OK
+   Cliente registado com sucesso. O identificador é {id}.
+** NOK
+   Número de identificação existente.
+* AC
+  Id Cliente
+  Nome
+  DDMMAAAA
+  Morada
+  email
+  Num Telefone
+** OK
+   Cliente alterado com sucesso.
+** NOK
+   Cliente inexistente.
+* NC
+  Id Cliente
+  Montante inicial [0, +inf[ || ""
+** OK
+   Conta criada com sucesso. O número é {id}.
+** NOK
+   Cliente inexistente.
+* ACC
+  Id Cliente
+  Número Conta
+** OK
+   Cliente associado à conta.
+** NOK
+   Cliente inexistente.
+   Cliente já associado.
+* M
+  Id Cliente
+  Número conta
+  Montante ]-inf, +inf[
+  DDMMAAAA
+** OK
+   Movimento registado com sucesso.
+** NOK
+   Cliente inexistente.
+   Conta inexistente.
+* SC
+  Número Conta
+** OK
+   A conta tem saldo {saldo}.
+** NOK
+   Conta inexistente.
+
+
+Account
+Client
+Movement
+Bank
