@@ -1,16 +1,20 @@
 package pt.ual.bank.controllers;
 
 import pt.ual.bank.models.Client;
+import pt.ual.bank.models.Account;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Bank {
     private List<Client> clients;
+    private List<Account> accounts;
     public static int clientIdCouting = 1;
+    public static int accountIdCouting = 1;
 
     public Bank() {
         this.clients = new ArrayList<>();
+        this.accounts = new ArrayList<>();
     }
 
     public boolean hasClientByIdNumber(String idNumber, String idType) {
@@ -63,6 +67,14 @@ public class Bank {
     }
 
     public String openAccount(String clientId, double initialDepositAmount) {
-        return null;
+        Account newAccount = new Account();
+        newAccount.setAccountId(Integer.toString(accountIdCouting));
+        newAccount.setClientId(clientId);
+        newAccount.setBalance(initialDepositAmount);
+        newAccount.setBankoverdraft(false);
+
+        accounts.add(newAccount);
+        accountIdCouting++;
+        return newAccount.getAccountId();
     }
 }
